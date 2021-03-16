@@ -1,0 +1,135 @@
+<ion-header>
+    <!-- <ion-toolbar color="primary">
+        <ion-title>
+            Inscription
+        </ion-title>
+    </ion-toolbar> -->
+    <ion-toolbar color="primary">
+        <ion-button slot="start">
+            <ion-button (click)="prev()">
+                <ion-icon slot="start" name="arrow-back"></ion-icon>
+                Précedent
+            </ion-button>
+        </ion-button>
+        <ion-button slot="end">
+            <ion-button (click)="next()">
+                Suivant
+                <ion-icon slot="end" name="arrow-forward"></ion-icon>
+            </ion-button>
+        </ion-button>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-slides #signupSlider>
+
+        <ion-slide>
+
+            <ion-list lines="none">
+                <br>
+                <p style="color: #ea6153;">Saisir vos données</p><br>
+                <form [formGroup]="slideOneForm">
+
+                    <ion-item lines="full">
+                        <ion-label position="floating">
+                            <ion-icon name="person" item-start class="text-primary"></ion-icon>
+                            Nom
+                        </ion-label>
+                        <ion-input type="text" id="nom" name="nom" required></ion-input>
+                    </ion-item>
+
+                    <ion-item lines="full">
+                        <ion-label position="floating">
+                            <ion-icon name="person" item-start class="text-primary"></ion-icon>
+                            Prénom
+                        </ion-label>
+                        <ion-input type="text" id="prenom" name="prenom" required></ion-input>
+                    </ion-item>
+
+                    <ion-item lines="full">
+                        <ion-label position="floating">
+                            <ion-icon name="calendar-outline" item-start class="text-primary"></ion-icon>
+                            Date de naissance
+                        </ion-label>
+                        <ion-datetime type="date" id="dateNaiss" name="dateNaiss" required></ion-datetime>
+                    </ion-item>
+
+                    <ion-item lines="full">
+                        <ion-label position="floating">
+                            <ion-icon name="locate" item-start class="text-primary"></ion-icon>
+                            Adresse
+                        </ion-label>
+                        <ion-input type="text" id="adresse" name="adresse" required></ion-input>
+                    </ion-item>
+
+
+                </form>
+
+            </ion-list>
+        </ion-slide>
+
+        <ion-slide>
+            <form [formGroup]="slideTwoForm">
+                <ion-item lines="full">
+                    <ion-label position="floating">
+                        <ion-icon name="call" item-start class="text-primary"></ion-icon>
+                        Numéro de Téléphone
+                    </ion-label>
+                    <ion-input type="text" id="tel" name="tel"></ion-input>
+                </ion-item>
+                <ion-item lines="full">
+                    <ion-label position="floating">
+                        <ion-icon name="card" item-start class="text-primary"></ion-icon>
+                        Carte Identité National
+                    </ion-label>
+                    <ion-input type="text" id="cin" name="cin"></ion-input>
+                </ion-item>
+                <ion-item lines="full">
+                    <ion-label position="floating">
+                        Votre image
+                    </ion-label>
+                    <ion-input type="file" accept="image/*" id="img" name="img" class="file"></ion-input>
+                </ion-item>
+            </form>
+        </ion-slide>
+
+        <ion-slide>
+            <form [formGroup]="slideThreeForm">
+
+                <ion-item lines="full">
+                    <ion-label position="floating">
+                        <ion-icon name="mail" item-start class="text-primary"></ion-icon>
+                        Email
+                    </ion-label>
+                    <ion-input type="email" id="email" name="email"></ion-input>
+                </ion-item>
+
+                <ion-item lines="full">
+                    <ion-label position="floating">
+                        <ion-icon name="lock-closed-outline" item-start class="text-primary"></ion-icon>
+                        Mot de passe
+                    </ion-label>
+                    <ion-input type="password" id="mdp" name="mdp"></ion-input>
+                </ion-item>
+
+                <ion-item lines="full">
+                    <ion-label position="floating">
+                        <ion-icon name="lock-closed-outline" item-start class="text-primary"></ion-icon>
+                        Confirmer Mot de passe
+                    </ion-label>
+                    <ion-input type="password" id="Rmdp" name="Rmdp"></ion-input>
+                </ion-item>
+                <ion-row>
+                    <ion-col>
+                        <ion-button type="submit" color="danger" expand="block" (click)="inscription()">
+                            S'inscrire
+                        </ion-button>
+                    </ion-col>
+                </ion-row>
+            </form>
+        </ion-slide>
+
+    </ion-slides>
+
+</ion-content>
